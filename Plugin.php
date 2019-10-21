@@ -1,26 +1,19 @@
 <?php
 
-namespace Kanboard\Plugin\CommentActions;
+namespace Kanboard\Plugin\ProjectInvitation;
 
 use Kanboard\Core\Plugin\Base;
-use Kanboard\Core\Translator;
 
 class Plugin extends Base
 {
     public function initialize()
     {
-        //
     }
 
     public function onStartup()
     {
-        Translator::load($this->languageModel->getCurrentLanguage(), __DIR__ . '/Locale');
+//        Translator::load($this->languageModel->getCurrentLanguage(), __DIR__ . '/Locale');
     }
-    public function getClasses()
-    {
-        //
-    }
-
     public function getPluginName()
     {
         return 'ProjectInvitation';
@@ -29,7 +22,7 @@ class Plugin extends Base
     public function getPluginDescription()
     {
         //@ TODO ADD DESCRIPTION
-        return t('');
+//        return t('');
     }
 
     public function getPluginAuthor()
