@@ -8,6 +8,7 @@ class Plugin extends Base
 {
     public function initialize()
     {
+        $this->template->setTemplateOverride('project_permission/users', 'ProjectInvitation:users');
     }
 
     public function onStartup()
