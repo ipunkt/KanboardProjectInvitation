@@ -7,8 +7,14 @@ services:
     volumes:
       - .:/var/www/app/plugins/ProjectInvitation
       - ./docker/conf.d/local.ini:/etc/php7/conf.d/local.ini
+      - ./Data/config.php:/var/www/app/plugins/ProjectInvitation/Data/config.php
     environment:
       DATABASE_URL: mysql://kb:kb-secret@db/kanboard
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - 1025:1025
+      - 8025:8025
   pma:
     image: phpmyadmin/phpmyadmin
     ports:
