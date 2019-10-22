@@ -9,6 +9,16 @@ class Plugin extends Base
     public function initialize()
     {
         $this->template->setTemplateOverride('project_permission/users', 'ProjectInvitation:users');
+        $this->template->setTemplateOverride('user_invite/email', 'ProjectInvitation:email');
+    }
+
+    public function getClasses()
+    {
+        return array(
+            'Plugin\ProjectInvitation\Controller' => array(
+                'ProjectInviteController',
+            )
+        );
     }
 
     public function onStartup()

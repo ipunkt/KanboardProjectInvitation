@@ -59,27 +59,16 @@
 <!--User Invitation -->
     <div class="panel">
         <form method="post"
-              action="<?= $this->url->href('ProjectInviteController', 'inviteUser', array('plugin' => 'ProjectInvitation', 'project_id' => $project['id'])) ?>"
+              action="<?= $this->url->href('ProjectInviteController', 'inviteUser', array('plugin' => 'ProjectInvitation')) ?>"
               autocomplete="off" class="form-inline">
             <?= $this->form->csrf() ?>
-            <?= $this->form->hidden('project_id', array('project_id' => $project['id'])) ?>
-            <?= $this->form->hidden('user_id', $values) ?>
-            <?= $this->form->hidden('username', $values) ?>
-            <?= $this->form->hidden('external_id', $values) ?>
-            <?= $this->form->hidden('external_id_column', $values) ?>
-
-            <?= $this->form->label(t('Invite User'), 'invite_user') ?>
-            <?= $this->form->text('name', $values, $errors, array(
+            <?= $this->form->label(t('Invite User'), 'invite_user')?>
+            <?= $this->form->text('email', $values, $errors, array(
                 'required',
                 'placeholder="' . t('Enter User E-mail...') . '"',
                 'title="' . t('Enter User E-mail...') . '"',
-                'data-dst-field="user_id"',
-                'data-dst-extra-fields="external_id,external_id_column,username"',
-                'data-search-url="' . $this->url->href('UserAjaxController', 'autocomplete') . '"',
             ),
                 'autocomplete') ?>
-
-            <?= $this->form->select('role', $roles, $values, $errors) ?>
 
             <button type="submit" class="btn btn-blue"><?= t('Invite') ?></button>
         </form>
