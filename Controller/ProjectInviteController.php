@@ -31,9 +31,4 @@ class ProjectInviteController extends BaseController
 
         return $this->response->redirect($url);
     }
-
-    public function countEmails($email)
-    {
-        $count_emails = count(strpos($email, '@'));
-    }
 }
