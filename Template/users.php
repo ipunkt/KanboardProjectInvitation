@@ -72,5 +72,6 @@
 
             <button type="submit" class="btn btn-blue"><?= t('Invite') ?></button>
         </form>
+        <p class="form-help"><?= t('Enter one email address per invite.') ?></p>
     </div>
 <?php endif ?>
