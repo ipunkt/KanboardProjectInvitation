@@ -73,7 +73,6 @@
                 'placeholder="' . t('Enter user email...') . '"',
                 'title="' . t('Enter user email...') . '"'
             )) ?>
-
             <button type="submit" class="btn btn-blue"><?= t('Invite') ?></button>
         </form>
         <p class="form-help"><?= t('Enter one email address per invite.') ?></p>

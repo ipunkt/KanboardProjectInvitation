@@ -26,7 +26,6 @@ class ProjectInviteController extends BaseController
         } else {
             $this->flash->failure(t('You can add only one email per one invitation.'));
         }
-
         $url = 'project/' . $values['project_id'] . '/permissions';
 
         return $this->response->redirect($url);
