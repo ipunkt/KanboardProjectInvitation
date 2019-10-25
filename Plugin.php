@@ -2,8 +2,8 @@
 
 namespace Kanboard\Plugin\ProjectInvitation;
 
-use Kanboard\Core\Controller\AccessForbiddenException;
 use Kanboard\Core\Plugin\Base;
+use Kanboard\Core\Translator;
 
 class Plugin extends Base
 {
@@ -37,7 +37,7 @@ class Plugin extends Base
 
     public function onStartup()
     {
-//        Translator::load($this->languageModel->getCurrentLanguage(), __DIR__ . '/Locale');
+        Translator::load($this->languageModel->getCurrentLanguage(), __DIR__ . '/Locale');
     }
 
     public function getPluginName()
@@ -47,14 +47,13 @@ class Plugin extends Base
 
     public function getPluginDescription()
     {
-        //@ TODO ADD DESCRIPTION
-//        return t('');
+
+        return t("Plugin is used to invite new users to actual Project by typing user's email. Input for invitation is located in `Project Settings->Permissions`.");
     }
 
     public function getPluginAuthor()
     {
-        //@ TODO ADD INFO
-        return 'Andrei Volgin, ipunkt Business Solutions';
+        return 'Andrei Volgin / Hussein Khalil, ipunkt Business Solutions';
     }
 
     public function getPluginVersion()
