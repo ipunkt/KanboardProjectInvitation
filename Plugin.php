@@ -2,18 +2,25 @@
 
 namespace Kanboard\Plugin\ProjectInvitation;
 
+use Kanboard\Core\Controller\AccessForbiddenException;
 use Kanboard\Core\Plugin\Base;
 
 class Plugin extends Base
 {
     public function initialize()
     {
+
 //        if(APP_VERSION < '1.2.12')
 //            $this->template->setTemplateOverride('project_permission/users', 'ProjectInvitation:users-override');
-//        else
-        $this->template->hook->attach('template:project-permission:after-adduser',
-            'ProjectInvitation:users');
-
+        $this->template->hook->attachCallable('template:project-permission:after-adduser', 'ProjectInvitation:users',
+            function ($project, $values, $errors) {
+                $project_id = $this->request->getIntegerParam('project_id', $project['project_id']);
+                return array(
+                    'project_id' => $project_id,
+                    'values' => $values,
+                    'errors' => $errors
+                );
+            });
     }
 
     public function getClasses()
@@ -29,6 +36,7 @@ class Plugin extends Base
     {
 //        Translator::load($this->languageModel->getCurrentLanguage(), __DIR__ . '/Locale');
     }
+
     public function getPluginName()
     {
         return 'ProjectInvitation';
