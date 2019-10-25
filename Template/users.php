@@ -7,7 +7,7 @@
         <?= $this->form->csrf() ?>
         <?= $this->form->hidden('project_id', array('project_id' => $project_id)) ?>
         <?= $this->form->label(t('Invite User'), 'invite_user') ?>
-        <?= $this->form->text('email', $values, $errors, array(
+        <?= $this->form->email('email', $values, $errors, array(
             'required',
             'placeholder="' . t('Enter user email...') . '"',
             'title="' . t('Enter user email...') . '"'
