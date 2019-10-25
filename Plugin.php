@@ -8,7 +8,12 @@ class Plugin extends Base
 {
     public function initialize()
     {
-        $this->template->setTemplateOverride('project_permission/users', 'ProjectInvitation:users');
+//        if(APP_VERSION < '1.2.12')
+//            $this->template->setTemplateOverride('project_permission/users', 'ProjectInvitation:users-override');
+//        else
+        $this->template->hook->attach('template:project-permission:after-adduser',
+            'ProjectInvitation:users');
+
     }
 
     public function getClasses()
