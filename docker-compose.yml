@@ -37,5 +37,5 @@ services:
     volumes:
       - .:/target
     environment:
-      - USER_ID=10017
+      - USER_ID=10015
       - GROUP_ID=10003
