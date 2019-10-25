@@ -8,4 +8,5 @@ return array(
     'Invitation to user has been sent successfully.' => 'Einladung an Benutzer wurde erfolgreich gesendet',
     'User is already registered.' => 'Benutzer ist bereits registriert bzw. eingeladen',
     'You can add only one email per one invitation.' => 'Sie können nur eine E-Mail pro Einladung hinzufügen.',
+    'Please enter a valid email address.' => 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
 );

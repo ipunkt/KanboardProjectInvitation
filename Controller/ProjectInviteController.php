@@ -14,6 +14,13 @@ class ProjectInviteController extends BaseController
     {
         $values = $this->request->getValues();
         $user = $this->userModel->getByEmail($values['email']);
+        $url = 'project/' . $values['project_id'] . '/permissions';
+
+        if (! filter_var($values['email'], FILTER_VALIDATE_EMAIL)) {
+            $this->flash->failure('Please enter a valid email.');
+            return $this->response->redirect($url);
+        }
+
         $emails_number = substr_count($values['email'], '@');
 
         if (!($emails_number > 1)) {
@@ -26,7 +33,6 @@ class ProjectInviteController extends BaseController
         } else {
             $this->flash->failure(t('You can add only one email per one invitation.'));
         }
-        $url = 'project/' . $values['project_id'] . '/permissions';
 
         return $this->response->redirect($url);
     }

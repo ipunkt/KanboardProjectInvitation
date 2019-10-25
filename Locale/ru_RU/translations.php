@@ -8,4 +8,5 @@ return array(
     'Invitation to user has been sent successfully.' => 'Приглашение пользователю успешно выслано.',
     'User is already registered.' => 'Пользователь уже зарегистрирован.',
     'You can add only one email per one invitation.' => 'Вы можете обавить только одного адресата.',
+    'Please enter a valid email address.' => 'Пожалуйста, введите действительный адрес электронной почты.',
 );
