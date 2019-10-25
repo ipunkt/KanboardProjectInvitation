@@ -5,7 +5,7 @@ return array(
     'Enter user email...' => 'Введите эл. почту...',
     'Invite User' => 'Пригласить пользователя',
     'Invite' => 'Пригласить',
-    'Invitation to user has been sent successfully.' => 'приглашение пользователю успешно выслано',
-    'User is already registered.' => 'Пользователь уже зарегистрирован',
+    'Invitation to user has been sent successfully.' => 'Приглашение пользователю успешно выслано.',
+    'User is already registered.' => 'Пользователь уже зарегистрирован.',
     'You can add only one email per one invitation.' => 'Вы можете обавить только одного адресата.',
 );
