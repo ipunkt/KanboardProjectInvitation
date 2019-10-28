@@ -1,6 +1,6 @@
 <?php
 
-namespace Kanboard\Plugin\ProjectInvitation;
+namespace Kanboard\Plugin\KanboardProjectInvitation;
 
 use Kanboard\Core\Plugin\Base;
 use Kanboard\Core\Translator;
@@ -11,10 +11,10 @@ class Plugin extends Base
     {
 
         if (APP_VERSION < 'v1.2.11') {
-            $this->template->setTemplateOverride('project_permission/users', 'ProjectInvitation:users-override');
+            $this->template->setTemplateOverride('project_permission/users', 'KanboardProjectInvitation:users-override');
         } else {
             $this->template->hook->attachCallable('template:project-permission:after-adduser',
-                'ProjectInvitation:users',
+                'KanboardProjectInvitation:users',
                 function ($project, $values, $errors) {
                     $project_id = $this->request->getIntegerParam('project_id', $project['project_id']);
                     return array(
@@ -29,7 +29,7 @@ class Plugin extends Base
     public function getClasses()
     {
         return array(
-            'Plugin\ProjectInvitation\Controller' => array(
+            'Plugin\KanboardProjectInvitation\Controller' => array(
                 'ProjectInviteController',
             )
         );

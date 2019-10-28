@@ -2,7 +2,7 @@
 <div class="panel">
     <form method="post"
           action="<?= $this->url->href('ProjectInviteController', 'inviteUser',
-              array('plugin' => 'ProjectInvitation', 'project_id' => $project_id)) ?>"
+              array('plugin' => 'KanboardProjectInvitation', 'project_id' => $project_id)) ?>"
           autocomplete="off" class="form-inline">
         <?= $this->form->csrf() ?>
         <?= $this->form->hidden('project_id', array('project_id' => $project_id)) ?>
