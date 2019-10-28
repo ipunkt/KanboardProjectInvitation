@@ -5,7 +5,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - .:/var/www/app/plugins/ProjectInvitation
+      - .:/var/www/app/plugins/KanboardProjectInvitation
       - ./docker/conf.d/local.ini:/etc/php7/conf.d/local.ini
       - ./Data/config.php:/var/www/app/data/config.php
     environment:

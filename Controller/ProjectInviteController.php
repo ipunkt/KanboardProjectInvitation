@@ -1,6 +1,6 @@
 <?php
 
-namespace Kanboard\Plugin\ProjectInvitation\Controller;
+namespace Kanboard\Plugin\KanboardProjectInvitation\Controller;
 
 use Kanboard\Controller\BaseController;
 
