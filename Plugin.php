@@ -42,7 +42,7 @@ class Plugin extends Base
 
     public function getPluginName()
     {
-        return 'ProjectInvitation';
+        return 'KanboardProjectInvitation';
     }
 
     public function getPluginDescription()

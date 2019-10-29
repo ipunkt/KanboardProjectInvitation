@@ -8,3 +8,5 @@ define('MAIL_SMTP_PORT', 1025);
 define('MAIL_SMTP_USERNAME', '');
 define('MAIL_SMTP_PASSWORD', '');
 define('MAIL_SMTP_ENCRYPTION', null); // Valid values are null (not a string "null"), "ssl" or "tls"
+
+define('PLUGIN_INSTALLER', true);
