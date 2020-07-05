@@ -14,7 +14,7 @@ class ProjectInviteController extends BaseController
     {
         $values = $this->request->getValues();
         $user = $this->userModel->getByEmail($values['email']);
-        $url = 'project/' . $values['project_id'] . '/permissions';
+        $url = '?controller=ProjectPermissionController&action=index&project_id='.$values['project_id'];
 
         if (! filter_var($values['email'], FILTER_VALIDATE_EMAIL)) {
             $this->flash->failure('Please enter a valid email.');
